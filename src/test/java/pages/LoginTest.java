@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -23,9 +24,8 @@ public class LoginTest {
 
     @Test
     public void testLoginSuccess() {
-    	EdgeOptions options = new EdgeOptions();
-        options.addArguments("--headless");
-    	  driver = new EdgeDriver(options);
+ 
+    	  driver = new EdgeDriver();
     	LoginPage Login = new LoginPage(driver);
         // Test login functionality with valid credentials
         driver.get("https://demowebshop.tricentis.com/login");
