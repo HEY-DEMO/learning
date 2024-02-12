@@ -18,12 +18,14 @@ public class LoginTest {
     public void setUp() {
         // Set up WebDriver
     	 System.setProperty("webdriver.edge.driver", "drivers/msedgedriver.exe");
-         EdgeOptions options = new EdgeOptions();
-         options.addArguments("--headless");
+  
     }
 
     @Test
     public void testLoginSuccess() {
+    	EdgeOptions options = new EdgeOptions();
+        options.addArguments("--headless");
+    	  driver = new EdgeDriver(options);
     	LoginPage Login = new LoginPage(driver);
         // Test login functionality with valid credentials
         driver.get("https://demowebshop.tricentis.com/login");
