@@ -9,13 +9,11 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
 
 @Listeners(MyListener.class)
 public class error {
     public static ExtentReports extent;
-    private static ExtentTest logger;
+
     private WebDriver driver;
 
     @BeforeSuite
@@ -44,8 +42,6 @@ public class error {
 
     @Test
     public void test1() {
-        logger = extent.createTest("testMethod");
-        logger.log(Status.INFO, "This is a test method.");
         LoginPage Login = new LoginPage(driver);
         // Test login functionality with valid credentials
         driver.get("https://demowebshop.tricentis.com/login");
