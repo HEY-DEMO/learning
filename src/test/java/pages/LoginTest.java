@@ -39,10 +39,11 @@ public class LoginTest {
     @AfterClass
     public void tearDown() {
         // Quit WebDriver
-        driver.quit();
+    	if (driver != null) {
+            driver.quit();
     }
 }
-
+}
 
 
 
