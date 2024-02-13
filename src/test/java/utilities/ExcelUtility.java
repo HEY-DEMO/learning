@@ -6,6 +6,7 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -25,8 +26,8 @@ public class ExcelUtility {
     @BeforeClass
     public void setUp() {
         // Set up WebDriver
-        System.setProperty("webdriver.edge.driver", "drivers/msedgedriver.exe");
-        driver = new EdgeDriver();
+        System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
+        driver = new FirefoxDriver();
         driver.manage().window().maximize();
     }
 

@@ -3,6 +3,7 @@ import utilities.MyListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterClass;
@@ -24,11 +25,9 @@ public class error {
     @BeforeClass
     public void setUp() {
         // Initialize WebDriver instance
-        System.setProperty("webdriver.edge.driver", "drivers/msedgedriver.exe");
-        EdgeOptions options = new EdgeOptions();
-        options.addArguments("--headless");
+        System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
         //options.setHeadless(true); // Set headless mode
-        driver = new EdgeDriver(options);
+        driver = new FirefoxDriver();
         MyListener.setDriver(driver);
     }
 
